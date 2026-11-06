@@ -1,0 +1,16 @@
+# ---------------------------------------------------------------------------
+# financial_fraud_detection - development / notebook / testing dependencies
+#
+# Install after requirements.txt:
+#   python -m pip install -r requirements-dev.txt
+# ---------------------------------------------------------------------------
+
+# --- Notebooks -------------------------------------------------------------
+nbformat==5.11.1
+nbconvert==7.17.2
+ipykernel==7.4.0
+
+# --- Testing & linting -----------------------------------------------------
+pytest==9.2.0
+nbmake==1.5.5
+ruff==0.17.4

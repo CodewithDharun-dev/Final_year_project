@@ -1,0 +1,83 @@
+# ---------------------------------------------------------------------------
+# financial_fraud_detection - ignore rules
+# ---------------------------------------------------------------------------
+
+# --- Datasets (large, licensed competition data; never commit) -------------
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.zip
+
+# --- Serialised models & artifacts -----------------------------------------
+outputs/models/
+outputs/reports/
+outputs/selected_features.json
+outputs/shap_feature_ranking.csv
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.model
+*.cbm
+*.txt.model
+
+# --- Generated figures (regenerate via main.py / notebooks) -----------------
+outputs/figures/
+*.png
+*.jpg
+*.svg
+*.pdf
+*.html
+
+# --- Optuna / pipeline state -----------------------------------------------
+*.db
+*.sqlite3
+*.sqlite
+optuna_*.log
+.pipeline_state/
+.cache/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# --- Environments ----------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Jupyter ---------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.ipython_profile/
+*.nbconvert.ipynb
+.executed/
+
+# --- Testing / tooling -----------------------------------------------------
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+nbmake/
+
+# --- OS / editor -----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# --- Logs ------------------------------------------------------------------
+logs/
+*.log

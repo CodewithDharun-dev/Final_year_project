@@ -1,0 +1,42 @@
+# ---------------------------------------------------------------------------
+# Tooling configuration (linting + tests). Runtime dependencies are pinned in
+# requirements.txt; this file intentionally declares no build backend because
+# the pipeline is executed as a script (`python main.py`).
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [".venv", "notebooks", "outputs", "data"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific rules
+    "BLE",  # blind except
+    "N",    # pep8-naming
+    "RET",  # flake8-return
+    "PIE",  # flake8-pie
+]
+ignore = [
+    "N803",  # ML convention: X_train, Y_valid
+    "N806",  # ML convention: local X / y matrices
+    "SIM108",  # explicit if/else is often clearer for tensor shapes
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+# Do not blanket-ignore DeprecationWarning: those are early signals of upcoming
+# breakage (e.g. pandas 3 / LightGBM migrations). Silence only a few known,
+# project-controlled third-party ones below if they ever become noisy.
+filterwarnings = []
